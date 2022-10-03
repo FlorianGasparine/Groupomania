@@ -7,7 +7,7 @@ Créer un réseau social d'entreprise !
 
 ## Les techno utilisées :
 * NodeJs + Express
-* MongoDb
+* MongoDB
 * React
 
 ## Mise en place du Front 
