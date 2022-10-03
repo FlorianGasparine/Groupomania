@@ -30,4 +30,5 @@ nodemon server
 ```
 
 En cas d'erreures, executer ces commandes en étant administrateur.
-Verifier l'existence d'un dossier images dans le dossier back sinon le créer
+
+Verifier l'existence d'un dossier images dans le dossier back sinon le créer.
