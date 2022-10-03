@@ -26,7 +26,7 @@ Ouvrir le dossier back dans le terminal de votre éditeur puis exécuter les com
 npm install
 ```
 ```
-node server ou nodemon server
+nodemon server
 ```
 
 En cas d'erreures, executer ces commandes en étant administrateur
