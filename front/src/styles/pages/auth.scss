@@ -1,0 +1,117 @@
+.header {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  padding: 20px;
+  list-style-type: none;
+  font-weight: 700;
+
+  & li {
+    color: white;
+    cursor: pointer;
+
+    &:active {
+      padding: 5px;
+      transition: 350ms;
+    }
+    &:hover {
+      color: rgb(250, 236, 236);
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
+  }
+  @media screen and (min-width: 1024px) {
+    font-size: 25px;
+  }
+}
+
+.logo {
+  display: block;
+  margin: 100px auto;
+  height: 40px;
+
+  @media screen and (min-width: 768px) {
+    margin: 120px auto;
+    height: 60px;
+  }
+}
+
+.card {
+  min-width: 250px;
+  height: 500px;
+  margin: 50px 20px 0px 20px;
+  border: 0px solid black;
+  background-color: white;
+  border-radius: 50px;
+  box-shadow: 0px 0px 10px 6px #fd2d01;
+
+  &__title {
+    padding: 40px;
+    text-align: center;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin: 70px auto;
+    max-width: 400px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    margin: 100px auto;
+  }
+}
+
+.form__connexion {
+  margin-top: -40px;
+  text-align: center;
+
+  &__input--margin {
+    margin: 40px auto 5px auto;
+  }
+}
+
+.input__auth {
+  display: flex;
+  flex-direction: column;
+  margin: 50px auto 15px auto;
+  @include inputTextStyle;
+}
+
+.form--button {
+  text-decoration: none;
+  padding: 20px;
+  font-size: 18px;
+  color: #ffffff;
+  background-color: $primaryColor;
+  border-radius: 100px;
+  border: 0px solid #ffffff;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken($color: $primaryColor, $amount: 4);
+    @include boxShadowTransition;
+  }
+}
+
+.errorMessage {
+  padding: 10px;
+  width: 214px;
+  margin: -15px auto;
+  border-radius: 20px;
+  font-weight: 800;
+  font-size: 17px;
+  color: $primaryColor;
+}
+
+.confirmation__message {
+  margin: 0 auto;
+  padding: 10px;
+  text-align: center;
+  color: green;
+  font-weight: 800;
+  border-radius: 30px;
+  width: 250px;
+  font-size: 17px;
+}

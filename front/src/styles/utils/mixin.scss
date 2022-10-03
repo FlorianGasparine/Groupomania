@@ -1,0 +1,56 @@
+@mixin inputTextStyle {
+  outline: none;
+  border: none;
+  border-bottom: 2px solid $secondaryColor;
+}
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+@mixin boxShadowTransition {
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.4);
+  transition: 400ms;
+}
+
+@mixin defaultButton {
+  padding: 9px;
+  border: none;
+  border-radius: 15px;
+  background-color: $secondaryColor;
+  cursor: pointer;
+}
+
+@mixin defaultForm {
+  margin: 20px auto;
+  width: 80%;
+  padding: 10px;
+  font-weight: 700;
+  border-radius: 15px;
+  @include boxShadowTransition;
+  outline: none;
+}
+
+@mixin form {
+  max-width: 500px;
+  margin: 50px 5px 0px 5px;
+  padding: 50px;
+  background-color: white;
+  border-radius: 50% 20% / 10% 40%;
+  box-shadow: 0px 0px 5px 1px $secondaryColor;
+
+  @media screen and (min-width: 600px) {
+    margin: 50px auto 0px auto;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin: 60px auto 0px auto;
+  }
+
+  @media screen and (min-width: 1024px) {
+    margin: 60px auto 0px auto;
+  }
+}

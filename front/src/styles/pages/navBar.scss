@@ -1,0 +1,120 @@
+.navBar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0px;
+  padding: 0px;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 15px;
+  list-style-type: none;
+
+  &__img {
+    height: 28px;
+    width: 28px;
+    cursor: pointer;
+  }
+
+  @media screen and (min-width: 375px) {
+    &__img {
+      height: 30px;
+      width: 30px;
+    }
+  }
+
+  @media screen and (min-width: 425px) {
+    &__img {
+      height: 38px;
+      width: 38px;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    &__img {
+      height: 45px;
+      width: 45px;
+      margin-left: 25px;
+    }
+  }
+
+  @media screen and (min-width: 1500px) {
+    position: fixed;
+    margin-left: 25px;
+    flex-flow: column wrap;
+
+    &__img {
+      height: 55px;
+      width: 55px;
+    }
+  }
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(78 81 102 / 95%);
+
+  #button__logout {
+    outline: none;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    background: $secondaryColor;
+    cursor: pointer;
+
+    &:hover {
+      background: darken($secondaryColor, $amount: 5);
+      transition: 200ms;
+    }
+  }
+  #button__stayConnect {
+    margin-left: 20px;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    background: darken($color: $secondaryColor, $amount: 15);
+    font-weight: 600;
+    cursor: pointer;
+
+    &:hover {
+      background: darken($secondaryColor, $amount: 20);
+      transition: 200ms;
+    }
+  }
+}
+
+.paragraph__explanation__iconNavbar {
+  position: relative;
+  bottom: 10px;
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  font-size: 12px;
+
+  @media screen and (min-width: 375px) {
+    font-size: 14px;
+  }
+  @media screen and (min-width: 375px) {
+    font-size: 16px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    display: none;
+  }
+}
+
+.navBar > li:nth-child(3) > a:nth-child(1) {
+  text-decoration: none;
+}
+
+.navBar > li:nth-child(2) > a:nth-child(1) {
+  text-decoration: none;
+}
+
+.navBar > li:nth-child(2) > a:nth-child(1) > span:nth-child(2) {
+  margin-left: 5px;
+}

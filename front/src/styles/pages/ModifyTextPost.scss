@@ -1,0 +1,24 @@
+.form__modifyTextPost {
+  &--button {
+    margin-bottom: 20px;
+    @include defaultButton;
+
+    &:hover {
+      @include boxShadowTransition;
+    }
+  }
+
+  &--buttonSubmit {
+    margin-bottom: 20px;
+    @include defaultButton;
+    background-color: #ff7676;
+
+    &:hover {
+      @include boxShadowTransition;
+    }
+  }
+}
+
+#edit--messagePost {
+  @include defaultForm;
+}

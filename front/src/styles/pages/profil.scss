@@ -1,0 +1,53 @@
+.profil__form {
+  @include form;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  label {
+    font-weight: 700;
+  }
+
+  &--title {
+    text-align: center;
+    padding: 0px;
+    margin: 0px 0px 50px 0px;
+  }
+
+  &--profilPicture {
+    margin: 9px auto 40px auto;
+  }
+
+  &--pseudo {
+    margin-bottom: 40px;
+    @include inputTextStyle;
+  }
+
+  &--email {
+    margin-bottom: 80px;
+    border-radius: 15px;
+    padding: 5px;
+    border: 2px solid $secondaryColor;
+  }
+
+  &--btnRemove {
+    display: block;
+    margin: 0 auto;
+    @include defaultButton;
+    background: #4e516684;
+    color: white;
+    margin-bottom: 60px;
+    &:hover {
+      @include boxShadowTransition;
+    }
+  }
+
+  &--btnSubmit {
+    display: block;
+    margin: 0 auto;
+    @include defaultButton;
+    &:hover {
+      @include boxShadowTransition;
+    }
+  }
+}
