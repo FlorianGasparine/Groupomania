@@ -23,10 +23,10 @@ npm start
 Ajouter un dossier images si il n'apparait pas dans le dossier back
 Ouvrir le dossier back dans le terminal de votre éditeur puis exécuter les commandes suivantes :
 ```
-npm install
+npm install 
 ```
 ```
-nodemon server
+nodemon server ou npm start
 ```
 
 En cas d'erreures, executer ces commandes en étant administrateur.
