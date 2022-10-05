@@ -18,7 +18,6 @@ const CardPost = ({ post, isAdmin }) => {
   const [pseudoUser, setPseudoUser] = useState([]);
   const [profilPictureUser, setProfilPictureUser] = useState();
   const [showAllComments, setShowAllComments] = useState(false);
-  const [picturePost, setPicturePost] = useState(post.picture);
 
   const [message, setMessage] = useState(post.message);
 
@@ -118,8 +117,7 @@ const CardPost = ({ post, isAdmin }) => {
               message={message}
               setMessage={setMessage}
               isAdmin={isAdmin}
-              picturePost={picturePost}
-              setPicturePost={setPicturePost}
+              postPicture={post.picture}
             />
           </li>
 

@@ -11,8 +11,7 @@ const ModifyTextPost = ({
   message,
   setMessage,
   isAdmin,
-  picturePost,
-  setPicturePost,
+  postPicture,
 }) => {
   //State
   const [showEdit, setShowEdit] = useState(false);
@@ -29,31 +28,33 @@ const ModifyTextPost = ({
 
     if (newMessage === undefined || newMessage === "") {
       setNewMessage(postMessage);
-    } else {
-      axios({
-        method: "put",
-        url: `http://localhost:3001/api/post/${postId}`,
-        headers: {
-          authorization: sessionStorage.getItem("token"),
-          "Content-Type": "multipart/form-data",
-        },
-        data: {
-          posterId: posterId,
-          message: newMessage,
-          picture: newPicture,
-        },
-      })
-        .then((res) => {
-          setMessage(newMessage);
-          setNewMessage(newMessage);
-          setShowEdit(!showEdit);
-          setNewPicture(newPicture);
-          window.location.reload();
-        })
-        .catch((err) => {
-          alert("Impossible de modifier ce commentaire ");
-        });
     }
+    if (newPicture === undefined || postPicture === "") {
+      setNewPicture(postPicture);
+    }
+    axios({
+      method: "put",
+      url: `http://localhost:3001/api/post/${postId}`,
+      headers: {
+        authorization: sessionStorage.getItem("token"),
+        "Content-Type": "multipart/form-data",
+      },
+      data: {
+        posterId: posterId,
+        message: newMessage,
+        picture: newPicture,
+      },
+    })
+      .then((res) => {
+        setMessage(newMessage);
+        setNewMessage(newMessage);
+        setShowEdit(!showEdit);
+        setNewPicture(newPicture);
+        window.location.reload();
+      })
+      .catch((err) => {
+        alert("Impossible de modifier ce commentaire ");
+      });
   };
 
   //Render
@@ -92,7 +93,6 @@ const ModifyTextPost = ({
           <input
             type="file"
             name="picture"
-            id="image"
             className="profil__form--profilPicture"
             onChange={(e) => setNewPicture(e.target.files[0])}
           />

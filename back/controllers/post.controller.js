@@ -49,13 +49,18 @@ module.exports.updatePost = (req, res, next) => {
       UserModel.findById(req.body.posterId) // ID qui vient du SessionStorage Front
         .then((currentUser) => {
           if (post.posterId == req.body.posterId || currentUser.admin == true) {
+            const imageObject = req.file
+              ? {
+                  ...req.body,
+                  picture: `${req.protocol}://${req.get("host")}/images/${
+                    req.file.filename
+                  }`,
+                }
+              : { ...req.body };
             PostModel.updateOne(
               { _id: req.params.id },
               {
-                picture: `${req.protocol}://${req.get("host")}/images/${
-                  req.file.filename
-                }`,
-                ...req.body,
+                ...imageObject,
                 _id: req.params.id,
               }
             )
