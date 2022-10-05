@@ -3,7 +3,6 @@ const ObjectID = require("mongoose").Types.ObjectId;
 const fs = require("fs");
 
 module.exports.userProfil = (req, res) => {
-  console.log(req.params);
   // Controle si l'id passé en params est connu
   if (!ObjectID.isValid(req.params.id)) {
     return res.status(403).json({
