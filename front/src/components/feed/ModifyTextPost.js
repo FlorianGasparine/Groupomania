@@ -11,11 +11,13 @@ const ModifyTextPost = ({
   message,
   setMessage,
   isAdmin,
+  picturePost,
+  setPicturePost,
 }) => {
   //State
   const [showEdit, setShowEdit] = useState(false);
   const [newMessage, setNewMessage] = useState();
-  const [pictureValue, setPictureValue] = useState();
+  const [newPicture, setNewPicture] = useState();
 
   //Comportement
   const handleModifyPostMessage = () => {
@@ -38,13 +40,15 @@ const ModifyTextPost = ({
         data: {
           posterId: posterId,
           message: newMessage,
-          picture: pictureValue,
+          picture: newPicture,
         },
       })
         .then((res) => {
           setMessage(newMessage);
           setNewMessage(newMessage);
           setShowEdit(!showEdit);
+          setNewPicture(newPicture);
+          window.location.reload();
         })
         .catch((err) => {
           alert("Impossible de modifier ce commentaire ");
@@ -88,8 +92,9 @@ const ModifyTextPost = ({
           <input
             type="file"
             name="picture"
+            id="image"
             className="profil__form--profilPicture"
-            onChange={(e) => setPictureValue(e.target.files[0])}
+            onChange={(e) => setNewPicture(e.target.files[0])}
           />
 
           <input type="submit" className="form__modifyTextPost--buttonSubmit" />

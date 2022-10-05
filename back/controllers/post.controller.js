@@ -51,7 +51,13 @@ module.exports.updatePost = (req, res, next) => {
           if (post.posterId == req.body.posterId || currentUser.admin == true) {
             PostModel.updateOne(
               { _id: req.params.id },
-              { ...req.body, _id: req.params.id }
+              {
+                picture: `${req.protocol}://${req.get("host")}/images/${
+                  req.file.filename
+                }`,
+                ...req.body,
+                _id: req.params.id,
+              }
             )
               .then(() => {
                 res.status(201).json({ message: "Le post a bien été modifié" });
