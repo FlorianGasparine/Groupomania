@@ -7,7 +7,7 @@ Créer un réseau social d'entreprise !
 
 ## Les techno utilisées :
 * NodeJs + Express
-* MongoDb
+* MongoDB
 * React
 
 ## Mise en place du Front 
@@ -23,10 +23,12 @@ npm start
 Ajouter un dossier images si il n'apparait pas dans le dossier back
 Ouvrir le dossier back dans le terminal de votre éditeur puis exécuter les commandes suivantes :
 ```
-npm install
+npm install 
 ```
 ```
-nodemon server
+nodemon server ou npm start
 ```
 
-En cas d'erreures, executer ces commandes en étant administrateur
+En cas d'erreures, executer ces commandes en étant administrateur.
+
+Verifier l'existence d'un dossier images dans le dossier back sinon le créer.
