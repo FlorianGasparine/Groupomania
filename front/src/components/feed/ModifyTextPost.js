@@ -15,6 +15,7 @@ const ModifyTextPost = ({
   //State
   const [showEdit, setShowEdit] = useState(false);
   const [newMessage, setNewMessage] = useState();
+  const [pictureValue, setPictureValue] = useState();
 
   //Comportement
   const handleModifyPostMessage = () => {
@@ -32,10 +33,12 @@ const ModifyTextPost = ({
         url: `http://localhost:3001/api/post/${postId}`,
         headers: {
           authorization: sessionStorage.getItem("token"),
+          "Content-Type": "multipart/form-data",
         },
         data: {
           posterId: posterId,
           message: newMessage,
+          picture: pictureValue,
         },
       })
         .then((res) => {
@@ -81,6 +84,14 @@ const ModifyTextPost = ({
               setNewMessage(e.target.value);
             }}
           ></textarea>
+
+          <input
+            type="file"
+            name="picture"
+            className="profil__form--profilPicture"
+            onChange={(e) => setPictureValue(e.target.files[0])}
+          />
+
           <input type="submit" className="form__modifyTextPost--buttonSubmit" />
         </form>
       ) : null}

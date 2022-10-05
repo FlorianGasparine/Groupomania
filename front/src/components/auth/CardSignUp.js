@@ -10,7 +10,6 @@ const CardSignUp = () => {
   const [password, setPassword] = useState("");
 
   //Comportement
-
   let pseudoError = document.querySelector(".errorPseudo");
   let emailError = document.querySelector(".errorEmail");
   let passwordError = document.querySelector(".errorPassword");
@@ -45,8 +44,6 @@ const CardSignUp = () => {
             "Félicitation, vous pouvez désormais vous connecter 😎";
         })
         .catch((err) => {
-          console.log(err);
-
           //Verification Pseudo
           if (pseudo.length < 4) {
             pseudoError.textContent = "Veuillez saisir plus de 3 caractères";
