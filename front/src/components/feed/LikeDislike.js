@@ -30,7 +30,7 @@ const LikeDislike = ({ post }) => {
   const handleLike = () => {
     if (allDislikers.includes(userId)) {
       alert(
-        "Vous ne pouvez réagir qu'une fois par publication. Cliquer de nouveau pour supprimer votre réaction"
+        "Vous ne pouvez réagir qu'une fois par publication. Cliquez de nouveau pour supprimer votre réaction"
       );
     } else {
       if (allLikers.includes(userId)) {
