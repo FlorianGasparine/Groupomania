@@ -29,6 +29,6 @@ npm install
 nodemon server ou npm start
 ```
 
-En cas d'erreures, executer ces commandes en étant administrateur.
+En cas d'erreures, executez ces commandes en étant administrateur.
 
 Verifier l'existence d'un dossier images dans le dossier back sinon le créer.
